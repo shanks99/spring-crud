@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>회원 Page</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>회원 내역</h1>
+        <table th:style="'border:solid 1px black;'">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>이름</th>
+                <th>Email</th>
+                <th>-</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user : ${users}">
+                <th th:text="${user.id}"></th>
+                <th th:text="${user.name}"></th>
+                <th th:text="${user.email}"></th>
+                <th>
+                    <a th:href="|/user/view/${user.id}|">상세</a>
+                    <a th:href="|/user/update/${user.id}|">수정</a>
+                    <a th:onclick="|del(${user.id})|">삭제</a>
+                </th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<form name="frm" action="#" th:action="@{/user/delete}" method="#" th:method="delete">
+</form>
+</body>
+<script th:inline="javascript">
+    function del(id) {
+        document.frm.action += "/"+ id
+
+        document.frm.submit();
+    }
+</script>
+</html>

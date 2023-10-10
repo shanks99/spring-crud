@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>회원 Page</title>
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>회원 상세</h1>
+        <table th:style="'border:solid 1px black;'">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th th:text="Id"></th>
+                <td th:text="${user.id}"></td>
+            </tr>
+            <tr>
+                <th th:text="Name"></th>
+                <td th:text="${user.name}"></td>
+            </tr>
+            <tr>
+                <th th:text="Pw"></th>
+                <td th:text="${user.pw}"></td>
+            </tr>
+            <tr>
+                <th th:text="Pw"></th>
+                <td th:text="${user.pw}"></td>
+            </tr>
+            <tr>
+                <th th:text="Email"></th>
+                <td th:text="${user.email}"></td>
+            </tr>
+            <tr>
+                <th th:text="Hp"></th>
+                <td th:text="${user.hp}"></td>
+            </tr>
+            <tr>
+                <th th:text="Address"></th>
+                <td th:text="${user.address}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
